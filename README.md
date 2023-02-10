@@ -63,16 +63,16 @@ The following data structure is used
 |ProfilePic|text||Contains link for user's profile pic|
 |Username|text|      |Username of the account|
 |Password|text|     |Password|
-|Profile-title|text|    |
-|text-color|text|    |
+|Profile-title|text|    |title of user|
+|text-color|text|    |what color is the user text|
 |Points|number|Required, Auto Generated as 0 when creating an account|
 |item-list|Select many item-list||Used to select items from item list / serves as inventory|
 
 #### item-list
 |Field|Data Type|Constraint|Description|
 |-----|---------|----------|-----------|
-|item-name|text||
-|item-desc|text||
+|item-name|text||name of the item|
+|item-desc|text||description of the item|
 |cost|number||Cost of item|
 |item-cat|text|||category of the item|
 |change|text|||

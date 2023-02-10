@@ -1,6 +1,11 @@
-.left-shop{
-    display:grid;
-    grid-template-columns: auto auto;   
+.shop{
+    display: flex;
+    flex-direction: row;
+    margin-left: 15%;
+}
+
+.shop .item-container{
+    width: calc(80%/4);
 }
 
 .item-container{

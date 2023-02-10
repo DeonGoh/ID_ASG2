@@ -1,11 +1,8 @@
 $(document).ready(function () {
     // hides loading screen
     $('.loading-screen').hide();
-<<<<<<< Updated upstream
 
-=======
     
->>>>>>> Stashed changes
     const APIKEY = "63e60c29478852088da68009";
 
     function loginCheck(){
@@ -53,10 +50,7 @@ $(document).ready(function () {
         // hides the entire page and show loading screen
         $('.center').hide();
         $('.loading-screen').show();
-<<<<<<< Updated upstream
         e.preventDefault();
-=======
->>>>>>> Stashed changes
         loginCheck();
     });
 });
