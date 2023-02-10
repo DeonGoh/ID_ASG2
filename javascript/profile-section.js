@@ -1,14 +1,50 @@
 $(document).ready(function () {
-    const APIKEY = "63e60c29478852088da68009";
+    const APIKEY = "63e6560e478852088da68030";
 
     getAccountDetails();
+    getNavBarAccountDetails();
+
+    function getNavBarAccountDetails(){
+        var id = localStorage.getItem("id");
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://quizone-4a11.restdb.io/rest/account",
+            "method": "GET",
+            "headers": {
+            "content-type": "application/json",
+            "x-apikey": APIKEY,
+            "cache-control": "no-cache"
+            }
+        }
+    
+        $.ajax(settings).done(function (response) {
+            for (var i = 0; i < response.length; i++){
+                if(id == response[i]._id){
+                    $("#username-display").text(response[i].Username);
+                    $("#points-display").text(response[i].Points);
+                    $(".profile-pic").attr("src",response[i].ProfilePic );
+                    
+                    if(response[i]["profile-title"] != null){
+                        var usernameString = $("#username-display").text()
+                        $("#username-display").text(usernameString += ` ${response[i]["profile-title"]}`);
+                    }
+
+                    if (response[i]["text-color"] != null){
+                        console.log(response[i]["change"])
+                        $("#username-display").css({"color" : response[i]["change"]});
+                    }
+                }
+            }
+
+        });
+    }
 
     function getAccountDetails(){
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://idasg2-e35e.restdb.io/rest/account",
-            "url": "https://clowncar2-516f.restdb.io/rest/account",
+            "url": "https://quizone-4a11.restdb.io/rest/account",
             "method": "GET",
             "headers": {
             "content-type": "application/json",
@@ -51,6 +87,7 @@ $(document).ready(function () {
                     }
                 }
             }
+
         });
     }
 
@@ -59,7 +96,7 @@ $(document).ready(function () {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://clowncar2-516f.restdb.io/rest/",
+            "url": "https://quizone-4a11.restdb.io/rest/item-list",
             "method": "GET",
             "headers": {
               "content-type": "application/json",
@@ -84,7 +121,7 @@ $(document).ready(function () {
                     var settings = {
                         "async": true,
                         "crossDomain": true,
-                        "url": `https://clowncar2-516f.restdb.io/rest/account/${accountID}`,
+                        "url": `https://quizone-4a11.restdb.io/rest/account/${accountID}`,
                         "method": "PUT",
                         "headers": {
                             "content-type": "application/json",
@@ -100,32 +137,6 @@ $(document).ready(function () {
                     });
                 }
             }
-        });
-        
+        });   
     }
-
-    
-    /*
-    function getItems(itemID){
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://clowncar2-516f.restdb.io/rest/",
-            "method": "GET",
-            "headers": {
-              "content-type": "application/json",
-              "x-apikey": APIKEY,
-              "cache-control": "no-cache"
-            }
-        }
-          
-        $.ajax(settings).done(function (response) {
-            for (var i = 0; i < response[i].length; i++){
-                if (response[i]._id == itemID){
-                    equipItems(response[i]);
-                }
-            }
-        });
-    }*/
-
 });

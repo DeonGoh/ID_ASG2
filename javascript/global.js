@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const APIKEY = "63e60c29478852088da68009";
+    const APIKEY = "63e6560e478852088da68030";
     /* NAVBAR JAVASCRIPT */
 
     $('#logoutButton').on("click", function(){
@@ -36,7 +36,7 @@ $(document).ready(function () {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://clowncar2-516f.restdb.io/rest/quiz",
+            "url": "https://quizone-4a11.restdb.io/rest/quiz",
             "method": "GET",
             "headers": {
             "content-type": "application/json",
@@ -54,4 +54,8 @@ $(document).ready(function () {
             }
         });
     }
+
+    
+                
+    
 });
