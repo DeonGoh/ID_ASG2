@@ -20,14 +20,6 @@ User stories:
 Users are able to register and log in on an account on the website.
 Users are also able to set profile pictures.
 
-### Features left to Implement
-
-#### Leaderboard
-Score will be calculated by the number of correct answers and the time taken to complete the quiz.
-
-#### Points
-Points can be used to purchase cosemetics for the user which will change the aesthitics of that user in different ways. 
-
 #### Quiz
 Quizes are sorted into categories and have different difficulties which will award different amount of points accordingly.
 
@@ -36,6 +28,14 @@ Users are able to unlock cosmetics using their points earned from playing quizes
 Some of the unlocks are
 - Name text color
 - Title
+
+#### Points
+Points can be used to purchase cosemetics for the user which will change the aesthitics of that user in different ways. 
+
+### Features left to Implement
+
+#### Leaderboard
+Score will be calculated by the number of correct answers and the time taken to complete the quiz.
 
 ## Technology Used
 ### Hyper Text Markup Language
@@ -103,7 +103,7 @@ The following data structure is used
 2. log in page
     1. Try to submit an empty form
     2. Try to submit a form with an empty password field 
-    3. Try to submit a form with the correct name and correct password and see if after log in, it will redirect to 
+    3. Try to submit a form with the correct name and correct password and see if after log in, it will redirect to the home page
 
 3. Home page
     1. Try to go to profile page
@@ -111,7 +111,32 @@ The following data structure is used
     3. Try to click through the carousel
     4. Try to click on one of the quizzes under 'Quizzes to Start The Day'
     5. Try to click the logo in the navbar to go back to home page
-    
+    6. Try to click the 'and more...' option to go to Quizzes page
+
+4. Quizzes page
+    1. Try to click on one of the quizzes which leads to the quiz page
+    2. Try to click the 'and more' button to go to the quiz-section page of the category of your choice
+    3. Try to click on the logo in navbar to go back to the home page
+
+5. Quiz section page
+    1. Check if the category of the quiz section is the correct one you chose
+    2. Try to click on one of the quizzes to go to the quiz page
+    3. Try to click on the logo in navbar to go back to the home page
+
+6. Quiz page
+    1. Check if the quiz is the correct one you chose
+    2. Try to click on the logo in navbar to go back to the home page
+    3. Try to solve the question and get points
+    4. Try to get the questions wrong and run out of time and not get points
+
+7. Item page
+    1. Try to click on the logo in navbar to go back to the home page
+    2. Try to buy an item
+
+8. Profile Section
+    1. Try to click on the logo in navbar to go back to the home page
+    2. Try to Equip an item from the inventory
+
 ## Credits
 
 ### Content
