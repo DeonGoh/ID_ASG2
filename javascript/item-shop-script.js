@@ -1,14 +1,51 @@
 $(document).ready(function () {
-    const APIKEY = "63e60c29478852088da68009";
+    const APIKEY = "63e4e4f5478852088da67f32";
 
     getItem();
     getAccountInventory();
+    getNavBarAccountDetails();
+
+    function getNavBarAccountDetails(){
+        var id = localStorage.getItem("id");
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://clowncar-fd03.restdb.io/rest/account",
+            "method": "GET",
+            "headers": {
+            "content-type": "application/json",
+            "x-apikey": APIKEY,
+            "cache-control": "no-cache"
+            }
+        }
+    
+        $.ajax(settings).done(function (response) {
+            for (var i = 0; i < response.length; i++){
+                if(id == response[i]._id){
+                    $("#username-display").text(response[i].Username);
+                    $("#points-display").text(response[i].Points);
+                    $(".profile-pic").attr("src",response[i].ProfilePic );
+                    
+                    if(response[i]["profile-title"] != null){
+                        var usernameString = $("#username-display").text()
+                        $("#username-display").text(usernameString += ` ${response[i]["profile-title"]}`);
+                    }
+
+                    if (response[i]["text-color"] != null){
+                        console.log(response[i]["change"])
+                        $("#username-display").css({"color" : response[i]["change"]});
+                    }
+                }
+            }
+
+        });
+    }
 
     function getItem(){
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://clowncar2-516f.restdb.io/rest/item-list",
+            "url": "https://clowncar-fd03.restdb.io/rest/item-list",
             "method": "GET",
             "headers": {
             "content-type": "application/json",
@@ -51,7 +88,7 @@ $(document).ready(function () {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://clowncar2-516f.restdb.io/rest/account",
+            "url": "https://clowncar-fd03.restdb.io/rest/account",
             "method": "GET",
             "headers": {
             "content-type": "application/json",
@@ -65,7 +102,7 @@ $(document).ready(function () {
             var itemSettings = {
                 "async": true,
                 "crossDomain": true,
-                "url": "https://clowncar2-516f.restdb.io/rest/item-list",
+                "url": "https://clowncar-fd03.restdb.io/rest/item-list",
                 "method": "GET",
                 "headers": {
                   "content-type": "application/json",
@@ -82,7 +119,7 @@ $(document).ready(function () {
                         for(var z = 0; z < itemResponse.length; z ++){
                             for(var x = 0; x < response[i]["item-list"].length; x++){
                                 if (response[i]["item-list"][x]["_id"] == itemResponse[z]["_id"]){
-                                    $("#" + itemResponse[x]["_id"] + "-button").prop( "disabled", true);
+                                    $("#" + itemResponse[z]["_id"] + "-button").prop( "disabled", true);
                                 }
                             }
                         }
@@ -96,7 +133,7 @@ $(document).ready(function () {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://clowncar2-516f.restdb.io/rest/item-list",
+            "url": "https://clowncar-fd03.restdb.io/rest/item-list",
             "method": "GET",
             "headers": {
               "content-type": "application/json",
@@ -111,7 +148,7 @@ $(document).ready(function () {
                     var accountSettings = {
                         "async": true,
                         "crossDomain": true,
-                        "url": "https://clowncar2-516f.restdb.io/rest/account",
+                        "url": "https://clowncar-fd03.restdb.io/rest/account",
                         "method": "GET",
                         "headers": {
                           "content-type": "application/json",
@@ -132,11 +169,11 @@ $(document).ready(function () {
                                     data["item-list"].push(item);
                                     console.log(data)
     
-                                    var jsondata = {"item-list": data["item-list"],"Points": newPoints};
+                                    var jsondata = {"item-list" : data["item-list"],"Points" : newPoints};
                                     var settings = {
                                     "async": true,
                                     "crossDomain": true,
-                                    "url": `https://clowncar2-516f.restdb.io/rest/account/${accountResponse[x]._id}`,
+                                    "url": `https://clowncar-fd03.restdb.io/rest/account/${accountResponse[x]._id}`,
                                     "method": "PUT",
                                     "headers": {
                                         "content-type": "application/json",
@@ -148,7 +185,8 @@ $(document).ready(function () {
                                     }
     
                                 $.ajax(settings).done(function (response) {
-                                console.log(response);
+                                    console.log(response);
+                                    getAccountInventory();
                                 });
                                 
                                 } 

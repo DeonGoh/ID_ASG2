@@ -2,7 +2,7 @@ $(document).ready(function(){
     // hides loading screen
     $('.loading-screen').hide();
 
-    const APIKEY = "63e60c29478852088da68009";
+    const APIKEY = "63e4e4f5478852088da67f32";
 
     function signUp(){
         var username = $('#username-input').val();
@@ -18,7 +18,7 @@ $(document).ready(function(){
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://clowncar2-516f.restdb.io/rest/account",
+            "url": "https://clowncar-fd03.restdb.io/rest/account",
             "method": "POST",
             "headers": {
                 "content-type": "application/json",
@@ -48,7 +48,7 @@ $(document).ready(function(){
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://clowncar2-516f.restdb.io/rest/account",
+            "url": "https://clowncar-fd03.restdb.io/rest/account",
             "method": "GET",
             "headers": {
             "content-type": "application/json",

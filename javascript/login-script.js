@@ -1,12 +1,7 @@
 $(document).ready(function () {
     // hides loading screen
     $('.loading-screen').hide();
-<<<<<<< Updated upstream
-
-=======
-    
->>>>>>> Stashed changes
-    const APIKEY = "63e60c29478852088da68009";
+    const APIKEY = "63e4e4f5478852088da67f32";
 
     function loginCheck(){
         var allowlogin = false;
@@ -16,7 +11,7 @@ $(document).ready(function () {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://clowncar2-516f.restdb.io/rest/account",
+            "url": "https://clowncar-fd03.restdb.io/rest/account",
             "method": "GET",
             "headers": {
             "content-type": "application/json",
@@ -53,10 +48,7 @@ $(document).ready(function () {
         // hides the entire page and show loading screen
         $('.center').hide();
         $('.loading-screen').show();
-<<<<<<< Updated upstream
         e.preventDefault();
-=======
->>>>>>> Stashed changes
         loginCheck();
     });
 });
