@@ -61,8 +61,10 @@ The following data structure is used
 |Field|Data Type|Constraint|Description|
 |-----|---------|----------|-----------|
 |ProfilePic|text||Contains link for user's profile pic|
-|Username|text|Required & Unique|
-|Password|text|Required|
+|Username|text|      |Username of the account|
+|Password|text|     |Password|
+|Profile-title|text|    |
+|text-color|text|    |
 |Points|number|Required, Auto Generated as 0 when creating an account|
 |item-list|Select many item-list||Used to select items from item list / serves as inventory|
 
@@ -72,23 +74,18 @@ The following data structure is used
 |item-name|text||
 |item-desc|text||
 |cost|number||Cost of item|
-|item-cat|text|||
+|item-cat|text|||category of the item|
 |change|text|||
+|item-image   |text   |   |url to the image   |
 
 #### quizes
 |Field|Data Type|Constraint|Description|
 |-----|---------|----------|-----------|
-|QuizID|number|Required & Auto Increment|
-|QuizName|text|Required & Unique|
-|QuizDesc|text|Not Required|
+|QuizName|text||Name of Quiz|
+|QuizCat|text||Category of what the quiz in|
+|QuizDesc|text|Not Required|Description of Quiz|
 |Image|text|Not Required|
 |Event|bool|Required|Used to say if there's an event going on|
-
-#### leaderboard
-|Field|Data Type|Constraint|Description|
-|-----|---------|----------|-----------|
-|account|Select many account||Used to get account details for leaderboard|
-|quiz|Select 1 quiz||Used to get assign that one quiz a leaderboard with all the account details
 
 ## Testing
 1. Sign in page
