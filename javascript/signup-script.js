@@ -2,7 +2,7 @@ $(document).ready(function(){
     // hides loading screen
     $('.loading-screen').hide();
 
-    const APIKEY = "63ce80d5969f06502871b127";
+    const APIKEY = "63e60c29478852088da68009";
 
     function signUp(){
         var username = $('#username-input').val();
@@ -17,7 +17,7 @@ $(document).ready(function(){
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://idasg2-e35e.restdb.io/rest/account",
+            "url": "https://clowncar2-516f.restdb.io/rest/account",
             "method": "POST",
             "headers": {
                 "content-type": "application/json",
@@ -45,7 +45,7 @@ $(document).ready(function(){
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://idasg2-e35e.restdb.io/rest/account",
+            "url": "https://clowncar2-516f.restdb.io/rest/account",
             "method": "GET",
             "headers": {
             "content-type": "application/json",
@@ -80,7 +80,7 @@ $(document).ready(function(){
                 }
                 else if(password == check_password){
                     signUp();
-                    window.location.replace("index.html");
+                    window.location.replace("login_page.html");
                 }
             }
 

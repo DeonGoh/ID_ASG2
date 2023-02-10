@@ -60,12 +60,10 @@ The following data structure is used
 #### account
 |Field|Data Type|Constraint|Description|
 |-----|---------|----------|-----------|
-|profilepic|text||Contains link for user's profile pic|
-|UserID|number|Required & Auto Increment|
+|ProfilePic|text||Contains link for user's profile pic|
 |Username|text|Required & Unique|
 |Password|text|Required|
 |Points|number|Required, Auto Generated as 0 when creating an account|
-|Preferences|text|Not Required|
 |item-list|Select many item-list||Used to select items from item list / serves as inventory|
 
 #### item-list

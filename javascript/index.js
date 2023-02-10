@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const APIKEY = "63ce80d5969f06502871b127";
+    const APIKEY = "63e60c29478852088da68009";
 
     getAccountDetails();
     getQuizDetails();
@@ -9,7 +9,7 @@ $(document).ready(function () {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://idasg2-e35e.restdb.io/rest/account",
+            "url": "https://clowncar2-516f.restdb.io/rest/account",
             "method": "GET",
             "headers": {
             "content-type": "application/json",
@@ -34,7 +34,7 @@ $(document).ready(function () {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://idasg2-e35e.restdb.io/rest/quiz",
+            "url": "https://clowncar2-516f.restdb.io/rest/quiz",
             "method": "GET",
             "headers": {
               "content-type": "application/json",
@@ -46,7 +46,11 @@ $(document).ready(function () {
         $.ajax(settings).done(function (response) {
             for(var i = 0; i < response.length; i++){
                 $('.wrapped').append(`
+<<<<<<< Updated upstream
                 <a onclick="hyperlinkToQuizPage(${response[i]["QuizName"]})" >
+=======
+                <a id = "${response[i]._id}" >
+>>>>>>> Stashed changes
                     <div class="item" id="${response[i]._id}-block">
                         <div class="card">
                             <img src="${response[i].Image}" alt="banner-img${i}">
@@ -58,15 +62,35 @@ $(document).ready(function () {
                     </div>
                 </a>
                 `)
+                var clowncar = response[i].QuizName;
+
+                $(`#${response[i]._id}`).on("click", function(){
+                    hyperlinkToQuizPage(clowncar);
+                })
             }
         });
     }
 
+<<<<<<< Updated upstream
     function hyperlinkToQuizPage(QuizName){
         var settings = {
             "async": true,
             "crossDomain": true,
             "url": "https://idasg2-e35e.restdb.io/rest/quiz",
+=======
+
+    $('#logoutButton').on("click", function(){
+        localStorage.setItem("id", null);
+        window.location.replace("login_page.html");
+    })
+
+    function hyperlinkToQuizPage(QuizName){
+        console.log(QuizName)
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://clowncar2-516f.restdb.io/rest/quiz",
+>>>>>>> Stashed changes
             "method": "GET",
             "headers": {
               "content-type": "application/json",
@@ -86,7 +110,9 @@ $(document).ready(function () {
     }
 
 
+<<<<<<< Updated upstream
     /* NAVBAR JAVASCRIPT */
+>>>>>>> Stashed changes
     $('#Geography').on("click", function(e){
         e.preventDefault();
         hyperlinkToQuizzesPage('Geography');
@@ -116,7 +142,7 @@ $(document).ready(function () {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://idasg2-e35e.restdb.io/rest/quiz",
+            "url": "https://clowncar2-516f.restdb.io/rest/quiz",
             "method": "GET",
             "headers": {
               "content-type": "application/json",
