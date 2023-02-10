@@ -49,3 +49,7 @@ nav{
 #username-display{
     margin-right: 5px;
 }
+
+.dropdown-item{
+    cursor: pointer;
+}
