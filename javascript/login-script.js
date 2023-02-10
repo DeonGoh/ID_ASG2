@@ -33,6 +33,7 @@ $(document).ready(function () {
             for (var i  = 0; i < response.length; i++) {
                 if(response[i].Username == usernameInput && response[i].Password == passwordInput){
                     sessionStorage.setItem("id", response[i]._id);
+                    localStorage.setItem("id", response[i]._id);
                     window.location.replace("index.html");
                     allowlogin = true;
                 }
