@@ -1,0 +1,64 @@
+.quizzes{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px auto;
+    margin:auto;
+    gap: auto;
+    width: 95%;
+}
+.item{
+    border: solid black 2px;
+    border-radius: 5%;
+    width: calc(100%/6);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: calc(10%/3);
+    margin-left: calc(10%/3);
+    overflow: hidden;
+    transition: 1s;
+	height: 80%;
+}
+@media screen and (max-width:756px) {
+    .item{
+        width: calc(100%/4);
+    }
+}
+@media screen and (max-width:576px) {
+    .item{
+        width: calc(100%/3);
+        height: 40%;
+    }
+}
+.item a .card{
+    height: 100%;
+}
+.item a .card-body{
+    height: 40%;
+}
+.item a .card img{
+    height: 60%;
+}
+.card-body .card-text{
+    text-decoration: none;
+    margin:auto;
+}
+.item a:link{
+    text-decoration: none;
+    color: black;
+}
+.item:hover{
+    transform: scale(1.05);
+    z-index: 2;
+    box-shadow: 0px 10px 3px;
+}
+
+.card{
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}
+
+.item a .card:hover{
+    background-color: white;
+    color: black;
+}
