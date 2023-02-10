@@ -1,5 +1,6 @@
 # ID_ASG2
  Assignment 2 for Interactive Development
+## Github link: https://github.com/DeonGoh/ID_ASG2.git
 
 ## Overall concept
 Our aim is to encourage users to gain more knowledge by taking quizzes in a fun and exciting manner. A website where users are able to sign up for an account and earn points to purchase cosemetic items from a shop. Quizzes are sorted into categories and give different points according to the difficulty as well as the time taken to complete the quiz. A leaderboard is assigned to each quiz and showcases the fastest user to complete it.
