@@ -44,13 +44,9 @@ $(document).ready(function () {
           }
           
         $.ajax(settings).done(function (response) {
-            for(var i = 0; i < response.length; i++){
+            for(var i = 0; i < response.length && i < 5; i++){
                 $('.wrapped').append(`
-<<<<<<< Updated upstream
-                <a onclick="hyperlinkToQuizPage(${response[i]["QuizName"]})" >
-=======
-                <a id = "${response[i]._id}" >
->>>>>>> Stashed changes
+                <a id="${response[i]._id}">
                     <div class="item" id="${response[i]._id}-block">
                         <div class="card">
                             <img src="${response[i].Image}" alt="banner-img${i}">
@@ -62,7 +58,7 @@ $(document).ready(function () {
                     </div>
                 </a>
                 `)
-                var clowncar = response[i].QuizName;
+                let clowncar = response[i].QuizName;
 
                 $(`#${response[i]._id}`).on("click", function(){
                     hyperlinkToQuizPage(clowncar);
@@ -71,26 +67,12 @@ $(document).ready(function () {
         });
     }
 
-<<<<<<< Updated upstream
-    function hyperlinkToQuizPage(QuizName){
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://idasg2-e35e.restdb.io/rest/quiz",
-=======
-
-    $('#logoutButton').on("click", function(){
-        localStorage.setItem("id", null);
-        window.location.replace("login_page.html");
-    })
-
     function hyperlinkToQuizPage(QuizName){
         console.log(QuizName)
         var settings = {
             "async": true,
             "crossDomain": true,
             "url": "https://clowncar2-516f.restdb.io/rest/quiz",
->>>>>>> Stashed changes
             "method": "GET",
             "headers": {
               "content-type": "application/json",
@@ -103,16 +85,19 @@ $(document).ready(function () {
             for(var i = 0; i < response.length; i++){
                 if(response[i]["QuizName"] == QuizName){
                     localStorage.setItem("QuizName", QuizName);
-                    window.location.replace("quiz.html");
+                    window.location.assign("quiz.html");
                 }
             }
         });
     }
 
-
-<<<<<<< Updated upstream
     /* NAVBAR JAVASCRIPT */
->>>>>>> Stashed changes
+
+    $('#logoutButton').on("click", function(){
+        localStorage.setItem("id", null);
+        window.location.assign("login_page.html");
+    })
+    
     $('#Geography').on("click", function(e){
         e.preventDefault();
         hyperlinkToQuizzesPage('Geography');
@@ -155,7 +140,7 @@ $(document).ready(function () {
             for(var i = 0; i < response.length; i++){
                 if(response[i]["QuizCat"] == subject){
                     localStorage.setItem("subject", subject);
-                    window.location.replace("quiz_section.html");
+                    window.location.assign("quiz_section.html");
                 }
             }
         });

@@ -15,8 +15,8 @@
     <nav class="navbar navbar-expand-md bg-body-tertiary ms-auto p-0">
         <div class="container-fluid">
             <!-- brand logo -->
-            <a class="navbar-brand p-0" href="#">
-                <img src="bannertest/logo.png" alt="Bootstrap" width="140" height="80">
+            <a class="navbar-brand p-0" href="index.html">
+              <img src="bannertest/logo.png" alt="Bootstrap" width="140" height="80">
             </a>
             <!-- Hamburger -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,23 +30,23 @@
                       Quizzes
                   </a>
                   <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Geography</a></li>
-                      <li><a class="dropdown-item" href="#">Horror</a></li>
-                      <li><a class="dropdown-item" href="#">Nature</a></li>
-                      <li><a class="dropdown-item" href="#">Pop Culture</a></li>
-                      <li><a class="dropdown-item" href="#">Science</a></li>
-                      <li><a class="dropdown-item" href="#">and more...</a></li>
+                      <li><a class="dropdown-item" id="Geography">Geography</a></li>
+                      <li><a class="dropdown-item" id="Horror">Horror</a></li>
+                      <li><a class="dropdown-item" id="Nature">Nature</a></li>
+                      <li><a class="dropdown-item" id="Pop-Culture">Pop Culture</a></li>
+                      <li><a class="dropdown-item" id="Science">Science</a></li>
+                      <li><a class="dropdown-item" href="quizzes.html">and more...</a></li>
                   </ul>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Shop</a>
+                <a class="nav-link" href="item-shop.html">Shop</a>
                 </li>
             </ul>
             <!-- Points & Profile section -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-items">
                     <div class="points-section">
-                        <span>2000</span> points
+                        <span id="points-display">0</span> points
                     </div>
                 </li>
                 </li class="nav-items">
@@ -56,11 +56,12 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item text-danger" href="#" id="logoutButton">Log out</a></li>
                             </ul>
                         </li>
                         <div class="profile">
-                            <span><img src="profile-pic.jpg" alt="Bootstrap" class="profile-pic"></span>
-                            <span>Deon</span>
+                            <span><img alt="Bootstrap" class="profile-pic"></span>
+                            <span id="username-display"></span>
                         </div>
                     </div>
                 <li>
@@ -68,20 +69,30 @@
             </div>
         </div>
     </nav>
+
         <div class="left-shop">
             <div class="item-container">
-
+                <img src="">
+                <p>${response[i]["item-name"]}</p>
+                <input type="button" value="Buy">
             </div>
-            <div class="item-container">
 
+            <div class="item-container">
+                <img src="">
+                <p>${response[i]["item-name"]}</p>
+                <input type="button" value="Buy">
             </div>
         </div>
         <div class="right-shop">
             <div class="item-container">
-
+                <img src="">
+                <p>${response[i]["item-name"]}</p>
+                <input type="button" value="Buy">
             </div>
             <div class="item-container">
-
+                <img src="">
+                <p>${response[i]["item-name"]}</p>
+                <input type="button" value="Buy">
             </div>
         </div>
 
@@ -95,6 +106,7 @@
         -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="javascript/global.js"></script>
         <script src="javascript/item-shop-script.js"></script>
     </body>    
 </html>

@@ -11,6 +11,7 @@ $(document).ready(function(){
         var jsondata = {
             "Username" : username,
             "Password" : password,
+            "Points" : 0,
             "ProfilePic" : 'bannertest/default-profile-pic.jpg'
         }
 
@@ -30,10 +31,12 @@ $(document).ready(function(){
 
         $.ajax(settings).done(function (response) {
             console.log(response);
+            window.location.assign("login_page.html");
         });
     }
     // event listener
     $("#signUp").on('click',function (event){
+        console.log("BUTTOn")
         event.preventDefault();
         
         // hides the entire page and show loading screen
@@ -80,7 +83,6 @@ $(document).ready(function(){
                 }
                 else if(password == check_password){
                     signUp();
-                    window.location.replace("login_page.html");
                 }
             }
 

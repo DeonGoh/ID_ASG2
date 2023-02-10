@@ -124,35 +124,37 @@ $(document).ready(function () {
 
                     $.ajax(accountSettings).done(function (accountResponse) {
                         for (var x = 0; x < accountResponse.length; x++){
-                            if (accountResponse[x]["Points"] >= item["cost"]){
-                                newPoints = accountResponse[x]["Points"] - item["cost"];
-
-                                var data = accountResponse[x];
-                                data["item-list"].push(item);
-                                console.log(data)
-
-                                var jsondata = {"item-list": data["item-list"],"Points": newPoints};
-                                var settings = {
-                                "async": true,
-                                "crossDomain": true,
-                                "url": `https://clowncar2-516f.restdb.io/rest/account/${accountResponse[x]._id}`,
-                                "method": "PUT",
-                                "headers": {
-                                    "content-type": "application/json",
-                                    "x-apikey": APIKEY,
-                                    "cache-control": "no-cache"
-                                },
-                                "processData": false,
-                                "data": JSON.stringify(jsondata)
+                            if (accountResponse[x]["_id"] == localStorage.getItem("id")){
+                                if (accountResponse[x]["Points"] >= item["cost"]){
+                                    newPoints = accountResponse[x]["Points"] - item["cost"];
+    
+                                    var data = accountResponse[x];
+                                    data["item-list"].push(item);
+                                    console.log(data)
+    
+                                    var jsondata = {"item-list": data["item-list"],"Points": newPoints};
+                                    var settings = {
+                                    "async": true,
+                                    "crossDomain": true,
+                                    "url": `https://clowncar2-516f.restdb.io/rest/account/${accountResponse[x]._id}`,
+                                    "method": "PUT",
+                                    "headers": {
+                                        "content-type": "application/json",
+                                        "x-apikey": APIKEY,
+                                        "cache-control": "no-cache"
+                                    },
+                                    "processData": false,
+                                    "data": JSON.stringify(jsondata)
+                                    }
+    
+                                $.ajax(settings).done(function (response) {
+                                console.log(response);
+                                });
+                                
+                                } 
+                                else{
+                                    alert("You have insufficient points!")
                                 }
-
-                            $.ajax(settings).done(function (response) {
-                            console.log(response);
-                            });
-                            
-                            } 
-                            else{
-                                alert("You have insufficient points!")
                             }
                         }
                     });
@@ -160,5 +162,4 @@ $(document).ready(function () {
             }
         });
     }
-
 })
