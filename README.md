@@ -38,10 +38,10 @@ Some of the unlocks are
 - Title
 
 ## Technology Used
-### [Hyper Text Markup Language]()
+### Hyper Text Markup Language
 - The project uses HTML to display frontend in a browser.
 
-### [Cascading style sheet]()
+### Cascading style sheet
 - The project uses CSS to style frontend in a browser,specifically HTML.
 
 ### [JQuery](https://jquery.com/)
@@ -108,12 +108,18 @@ The following data structure is used
 3. Home page
     1. Try to go to profile page
     2. Try to go to Quizzes and click one of the dropdown items
-    3. Try to click throught the carousel
+    3. Try to click through the carousel
+    4. Try to click on one of the quizzes under 'Quizzes to Start The Day'
+    5. Try to click the logo in the navbar to go back to home page
     
 ## Credits
 
 ### Content
-
+- We received the questions and answers for our project from
+1. https://www.worldatlas.com/mountains/10-highest-mountains-in-the-world.html
+2. https://www.worldometers.info/geography/largest-countries-in-the-world/
+3. https://quiz-questions.uk/horror-quiz/
+4. https://parade.com/1037122/alexandra-hurtado/pop-culture-trivia/
 ### Media
 - We received the lottie animations for this project from [LottieFiles](https://lottiefiles.com/).
 ### Acknowledgements
