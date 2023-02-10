@@ -16,7 +16,6 @@ $(document).ready(function () {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://idasg2-e35e.restdb.io/rest/account",
             "url": "https://clowncar2-516f.restdb.io/rest/account",
             "method": "GET",
             "headers": {

@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    const APIKEY = "63ce80d5969f06502871b127";
     const APIKEY = "63e60c29478852088da68009";
 
     getAccountDetails();
@@ -9,6 +8,7 @@ $(document).ready(function () {
             "async": true,
             "crossDomain": true,
             "url": "https://idasg2-e35e.restdb.io/rest/account",
+            "url": "https://clowncar2-516f.restdb.io/rest/account",
             "method": "GET",
             "headers": {
             "content-type": "application/json",
