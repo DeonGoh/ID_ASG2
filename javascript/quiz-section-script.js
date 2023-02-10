@@ -23,11 +23,6 @@ $(document).ready(function () {
           $.ajax(settings).done(function (response) {
             console.log(response);
             $('#test').append(`<h1>${subject}</h1>`);
-<<<<<<< Updated upstream
-                
-=======
-
->>>>>>> Stashed changes
             for(var i = 0; i < response.length; i++){
                 if(response[i]["QuizCat"] == subject){
                     

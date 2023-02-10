@@ -19,17 +19,6 @@ $(document).ready(function () {
 
         $.ajax(settings).done(function (response) {
             for (var i = 0; i < response.length; i++){
-<<<<<<< Updated upstream
-                //if(response[i]._id == localstorage.getItem("id")){}
-                 // for categories in item list
-                for (var i  = 0; i < response[0]["item-list"].length; i++) {
-                    $('#profile-img').val(response[0].ProfilePic);
-                    $('#profile-name').val(response[0].Username);               
-                }
-                
-                for (var x  = 0; x < response[0]["item-list"].length; x++){
-                    if ($('#' + response[0]["item-list"][x]["item-cat"] ).length){
-=======
                 if(response[i]._id == localStorage.getItem("id")){
                     $('#profile-img').val(response[i].ProfilePic);
                     $('#profile-name').val(response[i].Username); 
@@ -42,7 +31,6 @@ $(document).ready(function () {
                             <p id="${response[i]["item-list"][x]["item-cat"]}">${response[i]["item-list"][x]["item-cat"]}</p>
                             `)
                         }
->>>>>>> Stashed changes
                     }
 
                     for (var x = 0; x < response[i]["item-list"].length; x ++){
